@@ -16,32 +16,8 @@ header {
   height: 36px;
 }
 
-#sup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: #707070;
-  transition: 0.7s;
-}
-
-#sup:hover {
-  color: white;
-}
-
-#faq {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: #707070;
-  transition: 0.7s;
-}
-
-#faq:hover {
-  color: white;
-}
-
+#sup,
+#faq,
 #acc {
   display: flex;
   justify-content: center;
@@ -51,87 +27,40 @@ header {
   transition: 0.7s;
 }
 
+#sup:hover,
+#faq:hover,
 #acc:hover {
   color: white;
 }
 
-main {
-  position: relative;
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #logo {
-  position: absolute;
-  z-index: 1;
-  right: 41.5%;
-  top: 15px;
-  width: 17%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #cartlogo {
-  position: absolute;
-  z-index: 1;
-  right: 4%;
-  top: 15px;
-  transition: .2s;
+  transition: .1s;
 }
 
-.cart_num {
-  position: absolute;
-  z-index: 1;
-  top: 21.5px;
-  right: 4.35%;
-  background-color: transparent;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  font-size: 20px;
-  font-weight: 600;
+#cartlogo:hover {
+  transform: scale(1.13);
+  transition: .1s;
 }
 
-.slider {
-  position: relative;
-  width: 100%;
-  height: 1080px;
-  overflow: hidden;
-}
-
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.slide:first-child {
-  opacity: 1;
-}
-
-.gtr1 {
+.gtr1,
+.gtr2,
+.gtr3 {
   margin-top: 110px;
   margin-bottom: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 65px;
-}
-
-.gtr2 {
-  margin-top: 150px;
-  margin-bottom: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 65px;
-}
-
-.gtr3 {
-  margin-top: 150px;
-  margin-bottom: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,7 +86,7 @@ main {
   font-size: 64px;
 }
 
-button { 
+button {
   cursor: pointer;
 }
 
@@ -201,10 +130,9 @@ button {
 
 #more {
   position: relative;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0); 
-  margin-top: 10px;
-  margin-bottom: 75px;
+  transform: translate(-50%, -50%);
   width: 220px;
   height: 55px;
   border: none;
@@ -213,6 +141,13 @@ button {
   background-color: #D15700;
   font-weight: 600;
   font-size: 25px;
+  transition: transform 0.3s;
+  margin-top: 25px;
+  margin-bottom: 55px;
+}
+
+#more:hover {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 footer {

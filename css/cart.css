@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    gap: 13px;
+    background-color: #272727;
+    color: white;
+    width: 100%;
+    height: 36px;
+}
+
+#sup,
+#faq,
+#acc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #707070;
+    transition: 0.7s;
+}
+
+#sup:hover,
+#faq:hover,
+#acc:hover {
+    color: white;
+}
+
+#logo {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 17px;
+    margin-top: 20px;
+}
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+    width: 545px;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.delete-btn {
+    width: 20px;
+    height: 20px;
+    background-color: #D15700;
+    color: white;
+    border: none;
+    border-radius: 100%;
+}
+
+.delete-btn:hover {
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+#checkout {
+    width: 140px;
+    height: 27px;
+    margin-top: 20px;
+    background-color: #6900bb;
+    color: white;
+    border: none;
+    transition: .3s;
+}
+
+#checkout:hover {
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    height: 75px;
+    background-color: #272727;
+}
