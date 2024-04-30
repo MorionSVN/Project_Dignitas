@@ -17,7 +17,7 @@ header {
 }
 
 #sup,
-#faq,
+#ab,
 #acc {
     display: flex;
     justify-content: center;
@@ -28,7 +28,7 @@ header {
 }
 
 #sup:hover,
-#faq:hover,
+#ab:hover,
 #acc:hover {
     color: white;
 }
@@ -41,18 +41,22 @@ header {
     justify-content: center;
 }
 
-#cart-container {
+main {
+    height: 100%;
+}
+
+.info {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 17px;
-    margin-top: 20px;
 }
 
 #cart-items {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 20px;
+    width: 65%;
+    margin-top: 30px;
+    margin-bottom: 398px;
 }
 
 .cart-item {
@@ -60,7 +64,7 @@ header {
     flex-direction: row;
     align-items: center;
     gap: 7px;
-    width: 545px;
+    width: 628px;
     border: 1px solid #707070;
     border-radius: 5px;
     padding: 10px;
@@ -68,6 +72,7 @@ header {
 
 .cart-item p {
     margin: 0;
+    font-size: 20px;
 }
 
 button {
@@ -81,6 +86,8 @@ button {
     color: white;
     border: none;
     border-radius: 100%;
+    order: 1;
+    margin-left: auto;
 }
 
 .delete-btn:hover {
@@ -88,13 +95,26 @@ button {
     transition: .3s;
 }
 
+#total {
+    width: 45%;
+}
+
+#sum {
+    font-weight: 500;
+    font-size: 28px;
+}
+
 #checkout {
-    width: 140px;
-    height: 27px;
-    margin-top: 20px;
+    width: 175px;
+    height: 35px;
+    margin-top: 7px;
+    margin-bottom: 150px;
     background-color: #6900bb;
+    font-weight: 600;
+    font-size: 15px;
     color: white;
     border: none;
+    border-radius: 10px;
     transition: .3s;
 }
 
@@ -104,10 +124,54 @@ button {
 }
 
 footer {
+    background-image: url(../imgs/footer.png);
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 13px;
-    height: 75px;
-    background-color: #272727;
+    flex-direction: column;
+    font-size: 24px;
+    color: #D7D7D7;
+    height: 410px;
+    background-color: #000000;
+}
+
+footer > p {
+    margin-top: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    font-size: 20px;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

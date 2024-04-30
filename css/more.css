@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    gap: 13px;
+    background-color: #272727;
+    color: white;
+    width: 100%;
+    height: 36px;
+}
+
+#sup,
+#ab,
+#acc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #707070;
+    transition: 0.7s;
+}
+
+#sup:hover,
+#ab:hover,
+#acc:hover {
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#logo {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cartlogo {
+    transition: .1s;
+}
+
+#cartlogo:hover {
+    transform: scale(1.13);
+    transition: .1s;
+}
+
+.gtr {
+    margin-top: 110px;
+    margin-bottom: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+}
+
+#name {
+    margin: 0;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+#model {
+    margin: 0;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+#price {
+    margin-top: 7px;
+    margin-bottom: 17px;
+    font-weight: 700;
+    font-size: 64px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#buy {
+    width: 284px;
+    height: 55px;
+    border: none;
+    border-radius: 17px;
+    color: white;
+    background-color: #6900bb;
+    font-weight: 600;
+    font-size: 25px;
+    transition: .3s;
+}
+
+#buy:hover {
+    transform: scale(1.07);
+    transition: .3s;
+}
+
+#incart {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 284px;
+    height: 55px;
+    border-radius: 17px;
+    border: 2px solid #6900bb;
+    color: #6900bb;
+    background-color: white;
+    font-weight: 600;
+    font-size: 25px;
+    transition: .3s;
+}
+
+#incart:hover {
+    transform: scale(1.07);
+    transition: .3s;
+}
+
+footer {
+    background-image: url(../imgs/footer.png);
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 24px;
+    color: #D7D7D7;
+    height: 410px;
+    background-color: #000000;
+}
+
+footer > p {
+    margin-top: 5px;
+}

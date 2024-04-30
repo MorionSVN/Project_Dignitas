@@ -1,4 +1,4 @@
-# ProjectDevotion
+# Project Dignitas
 
 ## Как запустить(в будущем все будет запускаться легче)
 

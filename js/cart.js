@@ -1,59 +1,81 @@
 document.addEventListener("DOMContentLoaded", function () {
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     let cartContainer = document.getElementById("cart-items");
-    let totalElement = document.getElementById("total");
-    let discountElement = document.getElementById("discount");
-    let totalWithDiscountElement = document.getElementById("total-with-discount");
+    let totalElement = document.getElementById("sum");
 
-    function updateTotal() {
+    function Total() {
         let total = 0;
         cartItems.forEach(function (item) {
-            total += item.price;
+            total += parseFloat(item.price);
         });
-        totalElement.textContent = total.toFixed(2);
-
-        let discount = total * 0.1;
-        discountElement.textContent = discount.toFixed(2);
-        let totalWithDiscount = total - discount;
-        totalWithDiscountElement.textContent = totalWithDiscount.toFixed(2);
+        totalElement.textContent = "ИТОГО: " + total + " ₽";
     }
 
     function Cart() {
         cartContainer.innerHTML = "";
-        cartItems.forEach(function (item, index) {
-            let cartItem = document.createElement("section");
-            cartItem.classList.add("cart-item");
+        if (cartItems.length === 0) {
+            totalElement.textContent = "ИТОГО: 0 ₽";
+        }
+        else {
+            cartItems.forEach(function (item, index) {
+                let cartItem = document.createElement("section");
+                cartItem.classList.add("cart-item");
 
-            let itemName = document.createElement("p");
-            itemName.textContent = "Название: " + item.name;
+                let itemName = document.createElement("p");
+                itemName.textContent = item.name;
 
-            let itemModel = document.createElement("p");
-            itemModel.textContent = "Модель: " + item.model;
+                let itemModel = document.createElement("p");
+                itemModel.textContent = item.model;
 
-            let itemPrice = document.createElement("p");
-            itemPrice.textContent = "Цена: " + item.price;
+                let itemPrice = document.createElement("p");
+                itemPrice.textContent = "Цена: " + item.price;
 
-            let deleteButton = document.createElement("button");
-            deleteButton.textContent = "X";
-            deleteButton.classList.add("delete-btn");
-            deleteButton.addEventListener("click", function () {
-                cartItems.splice(index, 1);
-                localStorage.setItem("cart", JSON.stringify(cartItems));
-                Cart();
-                updateTotal();
+                let deleteButton = document.createElement("button");
+                deleteButton.textContent = "X";
+                deleteButton.classList.add("delete-btn");
+                deleteButton.addEventListener("click", function () {
+                    cartItems.splice(index, 1);
+                    localStorage.setItem("cart", JSON.stringify(cartItems));
+                    Cart();
+                    Total();
+                });
+                cartItem.appendChild(itemName);
+                cartItem.appendChild(itemModel);
+                cartItem.appendChild(itemPrice);
+                cartItem.appendChild(deleteButton);
+                cartContainer.appendChild(cartItem);
             });
-            cartItem.appendChild(itemName);
-            cartItem.appendChild(itemModel);
-            cartItem.appendChild(itemPrice);
-            cartItem.appendChild(deleteButton);
-            cartContainer.appendChild(cartItem);
-        });
-        updateTotal();
+            Total();
+        }
     }
-
     Cart();
-    let checkoutBtn = document.querySelector("checkout");
+
+    let checkoutBtn = document.getElementById("checkout");
     checkoutBtn.addEventListener("click", function () {
-        alert("Спасибо за покупку :D");
+        if (cartItems.length === 0) {
+            alert("Ваша корзина пуста. Добавьте товары перед оформлением заказа.");
+            return;
+        }
+        showModal("Спасибо за покупку :D");
+        cartItems = [];
+        localStorage.removeItem("cart");
+        Cart();
+        Total();
     });
+    function showModal(message) {
+        let modal = document.getElementById("modal");
+        let modalText = document.getElementById("modal-text");
+        modalText.textContent = message;
+        modal.style.display = "block";
+
+        let closeBtn = document.getElementsByClassName("close")[0];
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
 });
