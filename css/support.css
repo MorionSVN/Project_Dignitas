@@ -76,6 +76,8 @@ header {
 }
 
 #vk {
+    color: #272727;
+    text-decoration: none;
     margin: 0;
 }
 
@@ -89,6 +91,8 @@ header {
 }
 
 #tg {
+    color: #272727;
+    text-decoration: none;
     margin: 0;
 }
 
@@ -134,4 +138,3 @@ footer {
 footer>p {
     margin-top: 5px;
 }
-
